@@ -3,6 +3,8 @@
         <h2>Make your URL shortener!</h2>
         <h5>Please add your Url into text field and click on Short It!</h5>
         <br/>
+        <%= @ur %><br/>
+        <%= @p %>
         <div id="mc_embed_signup">
 
 			 <%= form_for @url do |f|  %>
@@ -20,7 +22,7 @@
 						        			<tr>
 						        				<th>SHORT</th>
 						        				<th>URL</th>
-						        				<th class="numeric">CLICKS</th>
+						        				<th class="numeric">VISITS</th>
 						        				<th>DATE</th>
 						        				
 						        			</tr>
@@ -34,7 +36,7 @@
 							        				</td>
 							        				<td data-title="URL"><%= u.url_text %></td>
 
-							        				<td data-title="CLICKS" class="numeric"><%= u.clicks %></td>
+							        				<td data-title="VISITS" class="numeric"><%= u.clicks %></td>
 							        				<td data-title="DATE"><%= u.created_at %></td>
 							        				
 							        			</tr>
