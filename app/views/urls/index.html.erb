@@ -1,0 +1,62 @@
+<div class="cta-mail">
+    <div class="container text-center">
+        <h2>Make your URL shortener!</h2>
+        <h5>Please add your Url into text field and click on Short It!</h5>
+        <br/>
+        <div id="mc_embed_signup">
+
+			 <%= form_for @url do |f|  %>
+			 	<div class="row">
+			 		<div class="col-md-12">
+						<div class="col-md-11">
+						    <%= f.url_field  :url_text,:required => true, :pattern => '(http|ftp|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?', class: "form-control" %>
+
+<br/>
+<br/>
+
+						        <div id="no-more-tables">
+						            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+						        		<thead class="cf">
+						        			<tr>
+						        				<th>SHORT</th>
+						        				<th>URL</th>
+						        				<th class="numeric">CLICKS</th>
+						        				<th>DATE</th>
+						        				
+						        			</tr>
+						        		</thead>
+						        		<tbody>
+											<% @urls.each do |u| %>
+
+							        			<tr>
+							        				<td data-title="SHORT">
+							        				<a href=<%= request.original_url %><%= u.short %> ><%= request.original_url %><%= u.short %></a>
+							        				</td>
+							        				<td data-title="URL"><%= u.url_text %></td>
+
+							        				<td data-title="CLICKS" class="numeric"><%= u.clicks %></td>
+							        				<td data-title="DATE"><%= u.created_at %></td>
+							        				
+							        			</tr>
+						        			<%end%>
+						        		</tbody>
+						        	</table>
+
+								</div>
+
+
+
+						</div>
+						<div class="col-md-1">
+						     <%= f.submit "Short It!", class: "btn btn-primary" %>
+						 </div>
+			     	</div>
+			     </div>
+			 <%end%>
+
+        </div>
+    </div>
+</div>
+
+
+
