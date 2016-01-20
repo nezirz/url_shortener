@@ -1,10 +1,9 @@
 <div class="cta-mail">
     <div class="container text-center">
-        <h2>Make your URL shortener!</h2>
+        <h2><%= link_to "Make your URL short!", root_url %></h2>
         <h5>Please add your Url into text field and click on Short It!</h5>
         <br/>
-        <%= @ur %><br/>
-        <%= @p %>
+
         <div id="mc_embed_signup">
 
 			 <%= form_for @url do |f|  %>
@@ -13,8 +12,13 @@
 						<div class="col-md-11">
 						    <%= f.url_field  :url_text,:required => true, :pattern => '(http|ftp|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?', class: "form-control" %>
 
-<br/>
-<br/>
+							<br/>
+							        <div class="col-md-6 col-md-offset-3">
+								      <div class="form-group">
+									    <input class="form-control input-lg" id="inputlg" readonly="true" type="text" value="<%= @short %>">
+									  </div>
+									</div>
+							<br/>
 
 						        <div id="no-more-tables">
 						            <table class="col-md-12 table-bordered table-striped table-condensed cf">
@@ -32,7 +36,7 @@
 
 							        			<tr>
 							        				<td data-title="SHORT">
-							        				<a href=<%= request.original_url %><%= u.short %> ><%= request.original_url %><%= u.short %></a>
+							        				<a href=<%= request.original_url.split('?')[0] %><%= u.short %> ><%= request.original_url.split('?')[0] %><%= u.short %></a>
 							        				</td>
 							        				<td data-title="URL"><%= u.url_text %></td>
 
@@ -45,8 +49,37 @@
 						        	</table>
 
 								</div>
+<br/>
 
+						        <div id="no-more-tables">
+						            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+						        		<thead class="cf">
+						        			<tr>
+						        				<th>SHORT</th>
+						        				<th>URL</th>
+						        				<th class="numeric">VISITS</th>
+						        				<th>DATE</th>
+						        				
+						        			</tr>
+						        		</thead>
+						        		<tbody>
+											<% @urlvisits.each do |u| %>
 
+							        			<tr>
+							        				<td data-title="SHORT">
+							        				<a href=<%= request.original_url.split('?')[0] %><%= u.short %> ><%= request.original_url.split('?')[0] %><%= u.short %></a>
+							        				</td>
+							        				<td data-title="URL"><%= u.url_text %></td>
+
+							        				<td data-title="VISITS" class="numeric"><%= u.clicks %></td>
+							        				<td data-title="DATE"><%= u.created_at %></td>
+							        				
+							        			</tr>
+						        			<%end%>
+						        		</tbody>
+						        	</table>
+
+								</div>
 
 						</div>
 						<div class="col-md-1">

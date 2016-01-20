@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /home/ubuntu/Dropbox/RubyCode/url_shortener/app/controllers/urls_controller.rb @ line 17 UrlsController#create:
+
+    [1;34m11[0m: [32mdef[0m [1;34mcreate[0m
+    [1;34m12[0m: 	@url=[1;34;4mUrl[0m.new(url_params)
+    [1;34m13[0m: 	@p = [1;34;4mUrl[0m.find_by_url_text(@url.url_text)
+    [1;34m14[0m: 
+    [1;34m15[0m: 	 binding.pry
+    [1;34m16[0m: 
+ => [1;34m17[0m: 	[32mif[0m @p.present?
+    [1;34m18[0m: 		[1;34m#session[:short] = @p.short[0m
+    [1;34m19[0m: 		@u=root_path+@p.short
+    [1;34m20[0m: 		redirect_to @u
+    [1;34m21[0m: 	[32melse[0m
+    [1;34m22[0m: 		@url.short = [1;34;4mSecureRandom[0m.urlsafe_base64([1;34m5[0m)
+    [1;34m23[0m: 		@url.clicks = [1;34m0[0m
+    [1;34m24[0m: 		@url.active =[1;34m1[0m
+    [1;34m25[0m: 		[32mif[0m @url.save
+    [1;34m26[0m: 
+    [1;34m27[0m: 			[1;34m#session[:short] = @url.short[0m
+    [1;34m28[0m: 			redirect_to root_path+@url.short
+    [1;34m29[0m: 			[32mreturn[0m
+    [1;34m30[0m: 		[32mend[0m
+    [1;34m31[0m: 	[32mend[0m
+    [1;34m32[0m: [32mend[0m
+
