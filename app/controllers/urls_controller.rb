@@ -45,7 +45,7 @@ class UrlsController < ApplicationController
 			@ur=Url.find_by_short(@p)
 			if @ur.present?
 				@ur.update_attributes(clicks: @ur.clicks+1)
-				redirect_to root_path
+				redirect_to @ur.url_text
 			end
 
 	end
