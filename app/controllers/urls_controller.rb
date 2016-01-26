@@ -7,12 +7,13 @@ class UrlsController < ApplicationController
 		@urlvisits=Url.all.order("clicks DESC").take(10)
 		#@short=request.original_url+session[:short]
 		@short = request.original_url.gsub('?','')
+		
 	end
 	def create
 		@url=Url.new(url_params)
 		@p = Url.find_by_url_text(@url.url_text)
 
-		 binding.pry
+		 #binding.pry
 		
 		if @p.present?
 			#session[:short] = @p.short
