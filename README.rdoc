@@ -13,8 +13,8 @@ Things you may want to cover:
 * System dependencies
 	gem 'bootstrap-sass', '~> 3.3.5'
 
-Here is <a href="http://url.rubyonerails.com/">DEMO SITE</a>
 
+[Here is DEMO SITE](http://url.rubyonerails.com/)
 
 
 <tt>rake doc:app</tt>.
