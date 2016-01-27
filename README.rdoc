@@ -25,6 +25,6 @@ Things you may want to cover:
 Ruby On Rails URL Shortener  MADE WITH RUBY (2.2.3) ON RAILS 4.2.4
 
 Index page:
-http://s4.postimg.org/g3wfm0f25/index.png #Ruby #On #Rails #Url #Shortener #Index #Page
+http://s29.postimg.org/4v8sqgbuv/Ruby_On_Rails_Url_Shortner_Web_Site.png #Ruby #On #Rails #Url #Shortener #Index #Page
 
 <tt>rake doc:app</tt>.
