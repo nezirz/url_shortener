@@ -17,11 +17,6 @@ Things you may want to cover:
 
 * Sqli3
 
-* Gems:
-	Bootstrap-sass
-
-
-
 Ruby On Rails URL Shortener  MADE WITH RUBY (2.2.3) ON RAILS 4.2.4
 
 Index page:
