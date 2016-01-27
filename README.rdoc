@@ -1,8 +1,10 @@
 == README
 
-Ruby URL Shortener
+Ruby On Rails URL Shortener Web Site.
 
-Simple web app for shortening your long URL's
+Simple web app for shortening your long URL's.
+
+Here is DEMO SITE(http://url.rubyonerails.com/)
 
 Things you may want to cover:
 
@@ -13,8 +15,16 @@ Things you may want to cover:
 * System dependencies
 	gem 'bootstrap-sass', '~> 3.3.5'
 
+* Sqli3
 
-[Here is DEMO SITE](http://url.rubyonerails.com/)
+* Gems:
+	Bootstrap-sass
 
+
+
+Ruby On Rails URL Shortener  MADE WITH RUBY (2.2.3) ON RAILS 4.2.4
+
+Index page:
+http://s4.postimg.org/g3wfm0f25/index.png #Ruby #On #Rails #Url #Shortener #Index #Page
 
 <tt>rake doc:app</tt>.
